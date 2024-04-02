@@ -1,0 +1,7 @@
+<div class="history-page">
+  <!-- recibe la data del hijo en la variable callback -->
+  <app-search (callbackData)="receiveData($event)"></app-search>
+  <!-- envia la data al hijo en su propiedad tracks, el pipeasycn funciona para omitir las peticiones encoladas en casoi de tener una conexion lenta, haciendo caso unicamente
+  a la petición mas cercana, para eso necesita que la varible sea un ibservable para poder desuscribirse -->
+  <app-play-list-body [tracks]="listResults$ | async"></app-play-list-body>
+</div>
